@@ -9,12 +9,10 @@ while (opcaoMenu != "7")
 {
   Console.WriteLine("Selecione uma opção:\n" +
     "Digite 1 para listar o(s) andar(es) menos utilizados.\n" +
-    "Digite 2 para listar o(s) elevador(es) mais frequentados.\n" +
-    "Digite 3 para listar o(s) períodos de maior fluxo do elevador mais frequentado.\n" +
-    "Digite 4 para listar o(s) elevador(es) menos frequentados.\n" +
-    "Digite 5 para listar o(s) período(s) de menor fluxo do elevador menos frequentado.\n" +
-    "Digite 6 para listar o(s) período(s) de maior utilização do conjunto de elevadores.\n" +
-    "Digite 7 para exibir o percentual de uso de cada elevador.");
+    "Digite 2 para listar o(s) elevador(es) mais frequentado(s) junto ao período com maior fluxo.\n" +
+    "Digite 3 para listar o(s) elevador(es) menos frequentado(s) junto ao período com menor fluxo.\n" +
+    "Digite 4 para listar o(s) período(s) de maior utilização do conjunto de elevadores.\n" +
+    "Digite 5 para exibir o percentual de uso de cada elevador.");
 
   opcaoMenu = Console.ReadLine() ?? "0";
 
@@ -25,11 +23,7 @@ while (opcaoMenu != "7")
       PrintList(elevadorService.andarMenosUtilizado());
       break;
     case "2":
-      Console.WriteLine("Elevador(es) mais frequentado(s):");
-      PrintList(elevadorService.elevadorMaisFrequentado());
-      break;
-    case "3":
-      Console.WriteLine("Período(s) de maior fluxo do(s) elevador(es) mais frequentado(s):");
+      Console.WriteLine("Elevador(es) mais frequentado(s) junto ao período com maior fluxo:");
       var elevadoresMaisFrequentados = elevadorService.elevadorMaisFrequentado();
       var periodosMaiorFluxo = elevadorService.periodoMaiorFluxoElevadorMaisFrequentado();
 
@@ -41,12 +35,8 @@ while (opcaoMenu != "7")
 
       PrintList(andarPeriodosMaiorFluxo);
       break;
-    case "4":
-      Console.WriteLine("Elevador(es) menos frequentado(s):");
-      PrintList(elevadorService.elevadorMenosFrequentado());
-      break;
-    case "5":
-      Console.WriteLine("Período(s) de menor fluxo do(s) elevador(es) menos frequentado(s):");
+    case "3":
+      Console.WriteLine("Elevador(es) menos frequentado(s) junto ao período com menor fluxo:");
       var elevadoresMenosFrequentados = elevadorService.elevadorMenosFrequentado();
       var periodosMenorluxo = elevadorService.periodoMenorFluxoElevadorMenosFrequentado();
 
@@ -58,11 +48,11 @@ while (opcaoMenu != "7")
 
       PrintList(andarPeriodosMenorFluxo);
       break;
-    case "6":
+    case "4":
       Console.WriteLine("Período(s) de maior utilização do conjunto de elevadores:");
       PrintList(elevadorService.periodoMaiorUtilizacaoConjuntoElevadores());
       break;
-    case "7":
+    case "5":
       Console.WriteLine("Percentual de uso do elevador A: " + elevadorService.percentualDeUsoElevadorA() + "%");
       Console.WriteLine("Percentual de uso do elevador B: " + elevadorService.percentualDeUsoElevadorB() + "%");
       Console.WriteLine("Percentual de uso do elevador C: " + elevadorService.percentualDeUsoElevadorC() + "%");
