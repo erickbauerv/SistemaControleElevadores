@@ -5,7 +5,6 @@ string opcaoMenu = "0";
 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\input.json");
 IElevadorService elevadorService = new ElevadorService(Path.GetFullPath(filePath));
 
-
 while (opcaoMenu != "7")
 {
   Console.WriteLine("Selecione uma opção:\n" +
