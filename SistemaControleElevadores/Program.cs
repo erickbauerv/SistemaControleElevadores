@@ -2,8 +2,8 @@
 using SistemaControleElevadores.Services;
 
 string opcaoMenu = "0";
-string filePath = "input.json";
-IElevadorService elevadorService = new ElevadorService(filePath);
+string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\..\input.json");
+IElevadorService elevadorService = new ElevadorService(Path.GetFullPath(filePath));
 
 
 while (opcaoMenu != "7")
