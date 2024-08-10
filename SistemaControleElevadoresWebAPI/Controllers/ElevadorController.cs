@@ -41,13 +41,13 @@ namespace SistemaControleElevadores.Controllers
     {
       IElevadorService elevadorService = new ElevadorService(dadosElevadores);
 
-      var elevadoresMaisFrequentados = elevadorService.elevadorMenosFrequentado();
-      var periodosMaiorFluxo = elevadorService.periodoMenorFluxoElevadorMenosFrequentado();
+      var elevadoresMenorsFrequentados = elevadorService.elevadorMenosFrequentado();
+      var periodosMenorFluxo = elevadorService.periodoMenorFluxoElevadorMenosFrequentado();
 
       IList<string> elevadorPeriodoMenorFluxo = new List<string>();
-      for (int i = 0; i < elevadoresMaisFrequentados.Count(); i++)
+      for (int i = 0; i < elevadoresMenorsFrequentados.Count(); i++)
       {
-        elevadorPeriodoMenorFluxo.Add($"Elevador: {elevadoresMaisFrequentados[i].ToString()} - Período: {periodosMaiorFluxo[i].ToString()}");
+        elevadorPeriodoMenorFluxo.Add($"Elevador: {elevadoresMenorsFrequentados[i].ToString()} - Período: {periodosMenorFluxo[i].ToString()}");
       }
 
       return elevadorPeriodoMenorFluxo;
