@@ -1,6 +1,6 @@
 ﻿namespace SistemaControleElevadores.Entities
 {
-  internal class DadosElevador
+  public class DadosElevador
   {
     public int Andar { get; set; }
     public char Elevador { get; set; }

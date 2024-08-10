@@ -1,0 +1,6 @@
+@SistemaControleElevadoresWebAPI_HostAddress = http://localhost:5143
+
+GET {{SistemaControleElevadoresWebAPI_HostAddress}}/ElevadorController/
+Accept: application/json
+
+###

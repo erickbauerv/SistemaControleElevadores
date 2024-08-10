@@ -27,37 +27,38 @@ while (opcaoMenu != "7")
       var elevadoresMaisFrequentados = elevadorService.elevadorMaisFrequentado();
       var periodosMaiorFluxo = elevadorService.periodoMaiorFluxoElevadorMaisFrequentado();
 
-      IList<string> andarPeriodosMaiorFluxo = new List<string>();
+      IList<string> elevadorPeriodoMaiorFluxo = new List<string>();
       for (int i = 0; i < elevadoresMaisFrequentados.Count(); i++)
       {
-        andarPeriodosMaiorFluxo.Add($"Elevador: {elevadoresMaisFrequentados[i].ToString()} - Período: {periodosMaiorFluxo[i].ToString()}");
+        elevadorPeriodoMaiorFluxo.Add($"Elevador: {elevadoresMaisFrequentados[i].ToString()} - Período: {periodosMaiorFluxo[i].ToString()}");
       }
 
-      PrintList(andarPeriodosMaiorFluxo);
+      PrintList(elevadorPeriodoMaiorFluxo);
       break;
     case "3":
       Console.WriteLine("Elevador(es) menos frequentado(s) junto ao período com menor fluxo:");
       var elevadoresMenosFrequentados = elevadorService.elevadorMenosFrequentado();
       var periodosMenorluxo = elevadorService.periodoMenorFluxoElevadorMenosFrequentado();
 
-      IList<string> andarPeriodosMenorFluxo = new List<string>();
+      IList<string> elevadorPeriodoMenorFluxo = new List<string>();
       for (int i = 0; i < elevadoresMenosFrequentados.Count(); i++)
       {
-        andarPeriodosMenorFluxo.Add($"Elevador: {elevadoresMenosFrequentados[i].ToString()} - Período: {periodosMenorluxo[i].ToString()}");
+        elevadorPeriodoMenorFluxo.Add($"Elevador: {elevadoresMenosFrequentados[i].ToString()} - Período: {periodosMenorluxo[i].ToString()}");
       }
 
-      PrintList(andarPeriodosMenorFluxo);
+      PrintList(elevadorPeriodoMenorFluxo);
       break;
     case "4":
       Console.WriteLine("Período(s) de maior utilização do conjunto de elevadores:");
       PrintList(elevadorService.periodoMaiorUtilizacaoConjuntoElevadores());
       break;
     case "5":
-      Console.WriteLine("Percentual de uso do elevador A: " + elevadorService.percentualDeUsoElevadorA() + "%");
-      Console.WriteLine("Percentual de uso do elevador B: " + elevadorService.percentualDeUsoElevadorB() + "%");
-      Console.WriteLine("Percentual de uso do elevador C: " + elevadorService.percentualDeUsoElevadorC() + "%");
-      Console.WriteLine("Percentual de uso do elevador D: " + elevadorService.percentualDeUsoElevadorD() + "%");
-      Console.WriteLine("Percentual de uso do elevador E: " + elevadorService.percentualDeUsoElevadorE() + "%");
+      Console.WriteLine("Percentual de uso de cada elevador:");
+      Console.WriteLine($"Percentual de uso do elevador A: {elevadorService.percentualDeUsoElevadorA()}%");
+      Console.WriteLine($"Percentual de uso do elevador B: {elevadorService.percentualDeUsoElevadorB()}%");
+      Console.WriteLine($"Percentual de uso do elevador C: {elevadorService.percentualDeUsoElevadorC()}%");
+      Console.WriteLine($"Percentual de uso do elevador D: {elevadorService.percentualDeUsoElevadorD()}%");
+      Console.WriteLine($"Percentual de uso do elevador E: {elevadorService.percentualDeUsoElevadorE()}%");
       break;
     default:
       Console.WriteLine("Opção inválida");

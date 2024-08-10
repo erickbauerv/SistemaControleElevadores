@@ -8,10 +8,9 @@ namespace SistemaControleElevadores.Services
   {
     private List<DadosElevador> _dadosElevadores;
 
-    public ElevadorService(string filePath)
+    public ElevadorService(List<DadosElevador> dadosElevadores)
     {
-      string json = File.ReadAllText(filePath);
-      _dadosElevadores = JsonConvert.DeserializeObject<List<DadosElevador>>(json) ?? new List<DadosElevador>();
+      _dadosElevadores = dadosElevadores;
     }
 
     public List<int> andarMenosUtilizado()
